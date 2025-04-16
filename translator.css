@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+}
+
+:root {
+  --btn-font-size: 1rem;
+  --btn-text-color: hsla(96.67deg, 81.15%, 47.84%, 1);
+  --btn-outline-color: hsla(96.67deg, 81.15%, 47.84%, 0.4);
+  --btn-front-bgc: hsla(96deg, 37.04%, 10.59%, 0.3);
+  --btn-front-bgc--hover: hsla(96deg, 37.04%, 10.59%, 0.75);
+}
+
+body {
+  background: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.1) 1.5px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.1) 1.5px, transparent 1px),
+    linear-gradient(to right, #581d26, #837295); /* Molecular-inspired gradient */
+  background-size: 20px 20px, 20px 20px, 100%;
+  background-position: 0 0, 10px 10px, 0 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  padding: 40px;
+  margin: 0;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.8); /* Translucent white background */
+  color: #333;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px); /* Adds a frosted glass effect */
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: smokeEffect 10s infinite;
+  z-index: 0;
+}
+
+@keyframes smokeEffect {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(50px, 50px) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.container > * {
+  position: relative;
+  z-index: 1; /* Ensures content stays above the smoke effect */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+textarea {
+  width: 100%;
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.btn {
+  position: relative;
+  padding: 0.8rem 2.5rem; /* Reduced padding */
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+  font-size: 0.9rem; /* Reduced font size */
+  font-weight: bold;
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* Molecular-inspired gradient */
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #2a5298, #1e3c72); /* Reverse gradient on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.output {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-left: 5px solid #48bb78;
+  color: #222;
+  border-radius: 8px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.codon {
+  font-weight: bold;
+  color: #2b6cb0;
+}
+
+.protein {
+  font-style: italic;
+  color: #2f855a;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #ddd;
+  font-size: 14px;
+}
